@@ -33,3 +33,29 @@
 
 - To read Salesforce data, LWC use a reactive wire service. When the wire service provisions data, the component re-renders.
 - Components use @wire in their JavaScript class to specify a wire adapter or an Apex method.
+
+## Imperative Method in LWC
+
+- To control when the method invocation occurs (for example, in response to clicking button), call the method imperatively.
+
+```js
+// apexImperativeMethod.js
+
+import { LightningElement, track } from "lwc";
+import getContactList from "@salesforce/apex/ContactController.getContactList";
+
+export default class ApexImperativeMethod extends LightningElement {
+  @track contacts;
+  @track error;
+
+  handleLoad() {
+    getContactList()
+      .then((res) => {
+        this.contacts = res;
+      })
+      .catch((err) => {
+        this.error = err;
+      });
+  }
+}
+```
