@@ -21,3 +21,10 @@
 2. To expose a public method, decorate it with @api. Public methods are part of a component's API.
 
    - To comminicate down the containment hierarchy, owner and parent components can call JavaScript methods on child components.
+
+#### @track
+
+- If a field's value changes, and the field is used in a template or in a getter of aproperty that's used in a template, the component re-renders and displays the new value.
+- When a field is decorated with @track, LWC tracks changes to the internal values of:
+  - Plain objects created with {}
+  - Arrays created with []
