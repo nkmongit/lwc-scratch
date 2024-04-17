@@ -28,3 +28,8 @@
 - When a field is decorated with @track, LWC tracks changes to the internal values of:
   - Plain objects created with {}
   - Arrays created with []
+
+#### @wire
+
+- To read Salesforce data, LWC use a reactive wire service. When the wire service provisions data, the component re-renders.
+- Components use @wire in their JavaScript class to specify a wire adapter or an Apex method.
