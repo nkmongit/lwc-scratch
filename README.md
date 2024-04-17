@@ -1,18 +1,23 @@
-# Salesforce DX Project: Next Steps
+# Salesforce LWC
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Decorators in LWC
 
-## How Do You Plan to Deploy Your Changes?
+- It is a part of ECMA script used to add extra functionality in your functions and methods.
+- The LWC programming model has three decorators that add functionality to a property or function.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+### Types of Decorators
 
-## Configure Your Salesforce DX Project
+- @api
+- @track
+- @wire
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+#### @api
 
-## Read All About It
+1. To expose a public property, decorate a field with @api. Public properties define the API for a component.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+   - Public properties used in a template are reactive. If the value of a public property used in a template changes, the component re-renders.
+   - An owner component that uses a component in its markup can access the component's public properties via DOM properties.
+
+2. To expose a public method, decorate it with @api. Public methods are part of a component's API.
+
+   - To comminicate down the containment hierarchy, owner and parent components can call JavaScript methods on child components.
