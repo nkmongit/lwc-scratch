@@ -64,3 +64,17 @@ export default class ApexImperativeMethod extends LightningElement {
 
 - To render HTML conditionally, add the `if:true | false` directive to a nested `<template>` tag that encloses the conditional content.
 - The `if:true | false = {property}` directive binds data to the template and removes and inserts DOM elements based on whether the data is truthy or falsy value.
+
+## Render DOM Elements Conditionally
+
+- To render HTML conditionally, add the `lwc:if | elseif={property}` and `lwc:else` directive to a nested `<template>` tag that encloses the conditional content.
+- The `lwc:if | elseif` directives bind `{property}` to the template, removing and inserting DOM elements based on whether the data is truthy or falsy value.
+- This example has two properties `property1` and `property2`
+
+```jsx
+<template>
+  <template lwc:if={property1}>Statement 1</template>
+  <template lwc:elseif={property2}>Statement 2</template>
+  <template lwc:else>Statement 3</template>
+</template>
+```
